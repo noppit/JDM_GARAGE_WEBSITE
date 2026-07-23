@@ -1,0 +1,449 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;800&display=swap');
+
+/* Bonus: CSS Variables (โทนสีหลัก 3 สี: ดำเข้ม, เทาเข้ม, แดงสปอร์ต) */
+:root {
+  --primary-color: #111827;    /* สีดำเข้ม/โคลสแบล็ค */
+  --secondary-color: #dc2626;  /* สีแดงสปอร์ต/Racer Red */
+  --accent-color: #1f2937;     /* สีเทาการาจ */
+  --bg-light: #f3f4f6;         /* สีพื้นหลัง */
+  --text-dark: #0f172a;
+  --white: #ffffff;
+  --gray-border: #e5e7eb;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Kanit', sans-serif;
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+  line-height: 1.6;
+}
+
+/* Base Link & Button Hover Styles (Bonus: Transitions) */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #b91c1c;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(220, 38, 38, 0.4);
+}
+
+/* Navbar (Flexbox Point 1) */
+header {
+  background-color: var(--primary-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 3px solid var(--secondary-color);
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;   
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  gap: 12px;              
+}
+
+.logo {
+  font-size: 2rem;       
+  color: var(--white);
+  font-style: italic;
+  text-align: center;
+}
+
+.logo span {
+  color: var(--secondary-color);
+}
+
+.logo-link img {
+  height: 50px;          
+  display: block;
+  margin: 0 auto;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 32px;               
+  padding: 0;
+}
+
+.nav-links a {
+  font-weight: 400;
+  color: #d1d5db;
+  font-size: 1.05rem;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+/* Hero Section (Flexbox Point 2) */
+.hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 24px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  color: var(--primary-color);
+  line-height: 1.2;
+  margin-bottom: 16px;
+  font-weight: 800;
+}
+
+.hero-content p {
+  font-size: 1.15rem;
+  color: #4b5563;
+  margin-bottom: 28px;
+}
+
+.hero-image {
+  flex: 1;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Features Section (Grid Point 1) */
+.features {
+  background-color: var(--white);
+  padding: 70px 24px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 40px;
+  font-weight: 800;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background-color: var(--bg-light);
+  padding: 32px 24px;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid var(--gray-border);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  border-color: var(--secondary-color);
+}
+
+.feature-card img {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  margin-bottom: 12px;
+  color: var(--primary-color);
+  font-size: 1.3rem;
+}
+
+/* Testimonials Section */
+.testimonials {
+  padding: 70px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial-container {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+.testimonial-card {
+  background-color: var(--white);
+  padding: 28px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  flex: 1;
+  max-width: 500px;
+  text-align: center;
+}
+
+.profile-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%; /* วงกลมตามโจทย์ */
+  object-fit: cover;
+  margin-bottom: 16px;
+  border: 3px solid var(--secondary-color);
+}
+
+/* Call To Action (CTA) Section */
+.cta-section {
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-align: center;
+  padding: 70px 24px;
+  border-top: 4px solid var(--secondary-color);
+}
+
+.cta-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+}
+
+.cta-section p {
+  color: #9ca3af;
+  margin-bottom: 28px;
+  font-size: 1.1rem;
+}
+
+/* Cars Page (Grid Point 2) */
+.page-header {
+  text-align: center;
+  padding: 50px 24px 20px;
+}
+
+.page-header h1 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.product-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 24px 70px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 คอลัมน์ตามโจทย์ */
+  gap: 30px;
+}
+
+.product-card {
+  background-color: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--gray-border);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* เอฟเฟกต์เด้งดึ๋ง */
+}
+/* Hover Effect การ์ดรถยนต์ */
+.product-card:hover {
+  transform: scale(1.18); /* ขยายใหญ่ขึ้น 18% */
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.4);
+  border: 2px solid var(--secondary-color);
+  z-index: 50; /* ดันลงมาทับทุกอย่างบนหน้าจอ */
+}
+
+.product-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-info {
+  padding: 20px;
+}
+
+.product-info h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: var(--primary-color);
+}
+
+.product-info p {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+.product-price {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--secondary-color);
+}
+
+/* Promotion Banner */
+.promo-banner {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  text-align: center;
+  padding: 18px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 30px 0;
+  letter-spacing: 0.5px;
+}
+
+/* Contact Page Section */
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px 70px;
+  display: flex;
+  gap: 40px;
+}
+
+.contact-info, .contact-form-wrapper {
+  flex: 1;
+}
+
+.info-item {
+  margin-bottom: 24px;
+}
+
+.info-item h3 {
+  color: var(--secondary-color);
+  margin-bottom: 6px;
+  font-size: 1.2rem;
+}
+
+/* Form Styles */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px;
+  border: 1px solid var(--gray-border);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: 2px solid var(--secondary-color);
+}
+
+.map-section {
+  max-width: 1200px;
+  margin: 0 auto 70px;
+  padding: 0 24px;
+}
+
+.map-section iframe {
+  width: 100%;
+  height: 380px;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* Footer Section */
+footer {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 50px 24px 20px;
+  border-top: 1px solid #374151;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.social-links a {
+  color: #9ca3af;
+  margin-left: 20px;
+}
+
+.social-links a:hover {
+  color: var(--secondary-color);
+}
+
+.copyright {
+  text-align: center;
+  border-top: 1px solid #374151;
+  padding-top: 24px;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+/* Bonus: Responsive Web Design (Media Query) */
+@media (max-width: 768px) {
+  .hero, 
+  .testimonial-container, 
+  .contact-container,
+  .footer-content {
+    flex-direction: column;
+  }
+  
+  .feature-grid, 
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* บนมือถือรักษาระยะห่างของเมนูให้พอดีหน้าจอ */
+  .nav-links {
+    gap: 16px;
+  }
+}
